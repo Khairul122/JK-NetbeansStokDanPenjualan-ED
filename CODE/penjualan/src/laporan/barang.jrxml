@@ -38,7 +38,8 @@
 				<textElement>
 					<font size="12" isBold="true"/>
 				</textElement>
-				<text><![CDATA[Pematang Panjang, Kecamaten Sijunjung]]></text>
+				<text><![CDATA[Pematang Panjang, Kecamaten Sijunjung
+]]></text>
 			</staticText>
 			<line>
 				<reportElement x="-28" y="79" width="617" height="1"/>
