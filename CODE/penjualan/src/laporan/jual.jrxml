@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[select*from jual]]>
+	</queryString>
+	<field name="KodeTransaksi" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="TanggalTransaksi" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Nama" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="NamaBarang" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="HargaJual" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Jumlah" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="TotalHarga" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="93" splitType="Stretch">
+			<line>
+				<reportElement x="-29" y="75" width="602" height="1"/>
+			</line>
+			<staticText>
+				<reportElement x="164" y="38" width="243" height="20"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Pematang Panjang, Kecamaten Sijunjung]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="145" y="0" width="282" height="38"/>
+				<textElement textAlignment="Center">
+					<font size="24" isBold="true"/>
+				</textElement>
+				<text><![CDATA[RAFA BANGUNAN]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="44" splitType="Stretch">
+			<line>
+				<reportElement x="-29" y="0" width="603" height="1"/>
+			</line>
+			<staticText>
+				<reportElement x="436" y="0" width="38" height="20"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Padang]]></text>
+			</staticText>
+			<textField pattern="dd MMMMM yyyy">
+				<reportElement x="474" y="1" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<rectangle>
+				<reportElement x="482" y="41" width="92" height="20"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="427" y="41" width="55" height="20"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="327" y="41" width="100" height="20"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="227" y="41" width="100" height="20"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="127" y="41" width="100" height="20"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="50" y="41" width="77" height="20"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="0" y="41" width="50" height="20"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="50" y="41" width="77" height="20"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[ Tanggal Jual]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="127" y="41" width="100" height="20"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Nama Supplier]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="227" y="41" width="100" height="20"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Nama Barang]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="327" y="41" width="100" height="20"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Harga Jual]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="482" y="41" width="92" height="20"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Total Harga]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="41" width="50" height="20"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[No Jual]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="427" y="41" width="55" height="20"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Jumlah]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="197" y="0" width="167" height="20"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[LAPORAN PENJUALAN]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<rectangle>
+				<reportElement x="482" y="0" width="92" height="20"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="427" y="0" width="55" height="20"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="327" y="0" width="100" height="20"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="227" y="0" width="100" height="20"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="127" y="0" width="100" height="20"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="50" y="0" width="77" height="20"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="0" y="0" width="50" height="20"/>
+			</rectangle>
+			<textField>
+				<reportElement x="0" y="0" width="50" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{KodeTransaksi}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="50" y="0" width="77" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{TanggalTransaksi}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="127" y="0" width="100" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{Nama}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="227" y="0" width="100" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{NamaBarang}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="327" y="0" width="100" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{HargaJual}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="427" y="0" width="55" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{Jumlah}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="482" y="0" width="92" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{TotalHarga}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
