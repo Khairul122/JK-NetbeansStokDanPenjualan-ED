@@ -87,7 +87,7 @@ private void bersih(){
         try{
             setKoneksi();
             String sql="insert into barang values('"+ kodeTF.getText() +"','" + namaTF.getText() 
-                    + "','" + beliTF.getText()+ "','" + jualTF.getText() + "','" + stockTF.getText() +"')";
+                    + "','" + beliTF.getText()+ "','" + jualTF.getText() + "','" + stockTF.getText() +"', '" + satuanTF.getText() +"')";
             st.executeUpdate(sql); 
             JOptionPane.showMessageDialog(null,"Simpan data berhasil");
             }
@@ -99,8 +99,11 @@ private void bersih(){
     private void perbarui(){
         try{
             setKoneksi();
-            String sql="update barang set NamaBarang='"+namaTF.getText()+"',HargaBeli='"+beliTF.getText()+
-                    "',HargaJual='"+jualTF.getText()+"' where KodeBarang='"+kodeTF.getText()+"'";
+            String sql="update barang set NamaBarang='"+namaTF.getText()+"'"
+                    + ",HargaBeli='"+beliTF.getText()
+                    +"',HargaJual='"+jualTF.getText()
+                    +"',Satuan='"+satuanTF.getText()
+                    +"' where KodeBarang='"+kodeTF.getText()+"'";
             st.executeUpdate(sql);
             JOptionPane.showMessageDialog(null,"Edit data berhasil","Abadi Sport",JOptionPane.INFORMATION_MESSAGE);
         } 
@@ -166,6 +169,8 @@ private void bersih(){
         beliTF = new javax.swing.JTextField();
         jualTF = new javax.swing.JTextField();
         stockTF = new javax.swing.JTextField();
+        satuanTF = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
@@ -218,7 +223,7 @@ private void bersih(){
 
         jLabel5.setText("HARGA JUAL");
 
-        jLabel6.setText("STOCK");
+        jLabel6.setText("SATUAN");
 
         beliTF.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
@@ -231,6 +236,8 @@ private void bersih(){
                 jualTFKeyTyped(evt);
             }
         });
+
+        jLabel7.setText("STOCK");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -251,12 +258,15 @@ private void bersih(){
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel4)
                             .addComponent(jLabel5)
-                            .addComponent(jLabel6))
+                            .addComponent(jLabel6)
+                            .addComponent(jLabel7))
                         .addGap(29, 29, 29)
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(beliTF)
-                            .addComponent(jualTF)
-                            .addComponent(stockTF))))
+                            .addComponent(stockTF, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(beliTF)
+                                .addComponent(jualTF)
+                                .addComponent(satuanTF)))))
                 .addContainerGap(51, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
@@ -280,9 +290,13 @@ private void bersih(){
                     .addComponent(jualTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(stockTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel6))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jLabel7)
+                    .addComponent(stockTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6)
+                    .addComponent(satuanTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(60, Short.MAX_VALUE))
         );
 
         jPanel5.setBackground(new java.awt.Color(204, 204, 255));
@@ -339,7 +353,7 @@ private void bersih(){
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                .addContainerGap(14, Short.MAX_VALUE)
+                .addContainerGap(31, Short.MAX_VALUE)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cariTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(cariBT))
@@ -408,7 +422,7 @@ private void bersih(){
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(keluarBT))
                     .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(69, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -424,7 +438,7 @@ private void bersih(){
                     .addComponent(editBT)
                     .addComponent(hapusBT)
                     .addComponent(keluarBT))
-                .addContainerGap(127, Short.MAX_VALUE))
+                .addContainerGap(94, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -612,6 +626,7 @@ private void bersih(){
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
@@ -623,6 +638,7 @@ private void bersih(){
     private javax.swing.JButton keluarBT;
     private javax.swing.JTextField kodeTF;
     private javax.swing.JTextField namaTF;
+    private javax.swing.JTextField satuanTF;
     private javax.swing.JButton simpanBT;
     private javax.swing.JTextField stockTF;
     private javax.swing.JButton tambahBT;

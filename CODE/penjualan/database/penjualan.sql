@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.0
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 03 Bulan Mei 2023 pada 17.55
--- Versi server: 10.4.19-MariaDB
--- Versi PHP: 7.4.19
+-- Waktu pembuatan: 30 Jan 2024 pada 13.19
+-- Versi server: 10.4.14-MariaDB
+-- Versi PHP: 7.4.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -32,8 +32,17 @@ CREATE TABLE `barang` (
   `NamaBarang` varchar(50) NOT NULL,
   `HargaBeli` int(30) NOT NULL,
   `HargaJual` int(30) NOT NULL,
-  `Stock` varchar(30) NOT NULL
+  `Stock` varchar(30) NOT NULL,
+  `Satuan` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `barang`
+--
+
+INSERT INTO `barang` (`KodeBarang`, `NamaBarang`, `HargaBeli`, `HargaJual`, `Stock`, `Satuan`) VALUES
+('B001', 'Semesn', 100000, 120000, '99', ''),
+('B002', 'Tes', 12, 15, '10', 'L');
 
 -- --------------------------------------------------------
 
@@ -70,6 +79,13 @@ CREATE TABLE `jual` (
   `UangKembali` int(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data untuk tabel `jual`
+--
+
+INSERT INTO `jual` (`KodeTransaksi`, `TanggalTransaksi`, `Nama`, `KodeBarang`, `NamaBarang`, `HargaJual`, `Jumlah`, `TotalHarga`, `UangBayar`, `UangKembali`) VALUES
+('TP001', '2024-01-30', 'Pak Budi', 'B001', 'Semesn', 120000, 1, 120000, 150000, 30000);
+
 -- --------------------------------------------------------
 
 --
@@ -105,6 +121,13 @@ CREATE TABLE `supplier` (
   `NoTelepon` varchar(20) NOT NULL,
   `Alamat` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `supplier`
+--
+
+INSERT INTO `supplier` (`KodeSupplier`, `Nama`, `NoTelepon`, `Alamat`) VALUES
+('S001', 'Budi', '082165443677', 'Padang');
 
 --
 -- Indexes for dumped tables

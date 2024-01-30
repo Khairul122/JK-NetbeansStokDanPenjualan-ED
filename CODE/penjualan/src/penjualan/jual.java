@@ -751,7 +751,7 @@ private void tgl(){
             JOptionPane.showMessageDialog(null, "Lengkapi inputan penjualan barang");
         } else{
             simpan();  
-            int pesan=JOptionPane.showConfirmDialog(null, "Cetak Kwitansi Nota","Cetak",JOptionPane.YES_NO_OPTION,JOptionPane.QUESTION_MESSAGE);
+            int pesan=JOptionPane.showConfirmDialog(null, "Cetak Invoice","Cetak",JOptionPane.YES_NO_OPTION,JOptionPane.QUESTION_MESSAGE);
                
             if(pesan==JOptionPane.YES_OPTION){
                    cetak_nota();
