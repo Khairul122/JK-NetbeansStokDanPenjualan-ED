@@ -103,27 +103,29 @@ Connection conn;
         tampil();
     }
     
-    private void otomatis(){
-        try {
-            setKoneksi();
-            String sql="select right (KodeSupplier,2)+1 from supplier";
-            ResultSet rs=st.executeQuery(sql);
-            
-            if(rs.next()){
-                rs.last();
-                String no=rs.getString(1);
-                while (no.length()<3){
-                    no="0"+no;
-                    kodeTF.setText("S"+no);}
-                }
-            else
-            {
-                kodeTF.setText("S001"); 
+   private void otomatis() {
+    try {
+        setKoneksi();
+        String sql = "SELECT MAX(KodeSupplier) FROM supplier";
+        ResultSet rs = st.executeQuery(sql);
+        if (rs.next()) {
+            String lastCode = rs.getString(1);
+            if (lastCode != null) {
+                int lastNumber = Integer.parseInt(lastCode.substring(1));
+                int newNumber = lastNumber + 1;
+                String newCode = String.format("S%03d", newNumber);
+                kodeTF.setText(newCode);
+            } else {
+                kodeTF.setText("S001");
             }
-            } catch (Exception e) 
-            {
+        } else {
+            kodeTF.setText("S001");
         }
+    } catch (Exception e) {
+        e.printStackTrace();
     }
+}
+
     
     private void hapus(){
         try{

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 19 Feb 2024 pada 23.18
+-- Waktu pembuatan: 19 Feb 2024 pada 19.56
 -- Versi server: 10.4.14-MariaDB
 -- Versi PHP: 7.4.10
 
@@ -91,9 +91,7 @@ INSERT INTO `jual` (`id`, `KodeTransaksi`, `TanggalTransaksi`, `Nama`, `KodeBara
 (52, 'TP003', '2024-02-20', 'Budi', 'B001', 'Semesn', 120000, 2, 240000, 400000, 40000),
 (53, 'TP003', '2024-02-20', 'Budi', 'B001', 'Semesn', 120000, 1, 120000, 400000, 40000),
 (54, 'TP004', '2024-02-20', 'Budi', 'B002', 'Tes', 15, 2, 30, 50, 5),
-(55, 'TP004', '2024-02-20', 'Budi', 'B002', 'Tes', 15, 1, 15, 50, 5),
-(56, 'TP005', '2024-02-20', 'Budi', 'B002', 'Tes', 15, 2, 30, 50, 5),
-(57, 'TP005', '2024-02-20', 'Budi', 'B002', 'Tes', 15, 1, 15, 50, 5);
+(55, 'TP004', '2024-02-20', 'Budi', 'B002', 'Tes', 15, 1, 15, 50, 5);
 
 -- --------------------------------------------------------
 
@@ -180,7 +178,7 @@ ALTER TABLE `supplier`
 -- AUTO_INCREMENT untuk tabel `jual`
 --
 ALTER TABLE `jual`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
